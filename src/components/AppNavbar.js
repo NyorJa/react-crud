@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 
-const AppNavBar = () => {
+export default function AppNavBar() {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -20,5 +20,3 @@ const AppNavBar = () => {
         </Navbar>
     );
 }
-
-export default AppNavBar;

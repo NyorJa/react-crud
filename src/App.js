@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BankList from './components/BankList';
 import BankEdit from './components/BankEdit';
 
-const App = () => {
+export default function App() {
   // const [banks, setBanks] = useState([]);
   // const [loading, setLoading] = useState(false);
 
@@ -49,9 +49,8 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route path="/banks/list/" exact={true} element={<BankList/>} />
+        <Route path="/banks/:id" element={<BankEdit />} />
       </Routes>
     </Router>
   );
 }
-
-export default App;

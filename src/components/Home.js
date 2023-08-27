@@ -4,7 +4,7 @@ import AppNavBar from './AppNavbar';
 import { Link } from 'react-router-dom';
 import {Button, Container} from "reactstrap";
 
-const Home = () => {
+export default function Home() {
     return (
         <div>
             <AppNavBar />
@@ -14,5 +14,3 @@ const Home = () => {
         </div>
     );
 }
-
-export default Home;

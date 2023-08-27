@@ -3,7 +3,7 @@ import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import AppNavBar from './AppNavbar';
 
-const BankList = () => {
+export default function BankList() {
 
     const [banks, setBanks] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -56,7 +56,7 @@ const BankList = () => {
             <AppNavBar />
             <Container fluid>
                 <div className="float-end">
-                    <Button color="success" tag={Link} to="/groups/new">Add Group</Button>
+                    <Button color="success" tag={Link} to="/banks/new">Add Bank</Button>
                 </div>
                 <h3>My Banks </h3>
                 <Table className="mt-4">
@@ -76,5 +76,3 @@ const BankList = () => {
         </div>
     );
 };
-
-export default BankList;
