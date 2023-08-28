@@ -9,7 +9,7 @@ export default function Home() {
         <div>
             <AppNavBar />
             <Container fluid>
-                <Button color="link"><Link to="/banks/list">Manage Banks</Link></Button>
+                <Button color="link"><Link to="/banks/">Manage Banks</Link></Button>
             </Container>
         </div>
     );
