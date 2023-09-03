@@ -52,7 +52,7 @@ export default function BankEdit() {
         navigate('/banks');
     }
 
-    const title = <h2>{bank.id ? 'Edit Bank' : 'Add Bank'}</h2>;
+    const title = <h2>{bank.accountNumber ? 'Edit Bank' : 'Add Bank'}</h2>;
 
     return (<div>
         <AppNavbar />
