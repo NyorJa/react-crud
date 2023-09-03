@@ -28,19 +28,11 @@ export default function BankEdit() {
     const handleChange = (event) => {
         const { name, value } = event.target
 
-        setBank({ ...bank, [name]: value })
-    }
-
-    const handleChangeInt = (event) => {
-        const { name, value } = event.target
-        if (validator.isInt(value)) {
-            setBank({ ...bank, [name]: value })
-        }
-    }
-
-    const handleChangeFloat = (event) => {
-        const { name, value } = event.target
-        if (validator.isFloat(value)) {
+        if(name === "transactionFee" && !validator.isInt(value)) {
+            console.debug("error input" + name);
+        } else if (name === "trust" && !validator.isInt(value)){
+            console.debug("error input" + name);
+        } else {
             setBank({ ...bank, [name]: value })
         }
     }
@@ -80,12 +72,12 @@ export default function BankEdit() {
                 <FormGroup>
                     <Label for="trust">Trust</Label>
                     <Input type="text" name="trust" id="trust" value={bank.trust || 0}
-                        onChange={handleChangeFloat} autoComplete="trust" />
+                        onChange={handleChange} autoComplete="trust" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="transactionFee">Transaction Fee</Label>
                     <Input type="text" name="transactionFee" id="transactionFee" value={bank.transactionFee || 0}
-                        onChange={handleChangeInt} autoComplete="transactionFee" />
+                        onChange={handleChange} autoComplete="transactionFee" />
                 </FormGroup>
                 <FormGroup>
                     <Button color="primary" type="submit">Save</Button>{' '}
