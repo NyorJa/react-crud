@@ -1,0 +1,25 @@
+{
+  "banks": [
+    {
+      "accountNumber": "1234",
+      "name": "bpi",
+      "trust": 1,
+      "transactionFee": "123212133123",
+      "id": 1
+    },
+    {
+      "accountNumber": "dsadas",
+      "name": "12321",
+      "trust": "12321",
+      "transactionFee": "2131555555",
+      "id": 2
+    },
+    {
+      "accountNumber": "dsadas",
+      "name": "asddas",
+      "trust": 0,
+      "transactionFee": 0,
+      "id": 3
+    }
+  ]
+}

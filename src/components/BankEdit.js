@@ -39,8 +39,9 @@ export default function BankEdit() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        let method = id !== 'new' ? 'PUT' : 'POST';
-        await fetch("/api/banks/", {
+        const method = id !== 'new' ? 'PUT' : 'POST';
+        const url = `/api/banks/${id !== 'new' ? id : ''}`;
+        await fetch(url, {
             method: method,
             headers: {
                 'Accept': 'application/json',

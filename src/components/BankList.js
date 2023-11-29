@@ -27,7 +27,7 @@ export default function BankList() {
                 'Content-Type': 'application/json'
             }
         }).then(() => {
-            let updatedBanks = [...banks].filter(i => i.accountNumber !== id);
+            let updatedBanks = [...banks].filter(i => i.id !== id);
             setBanks(updatedBanks);
         });
     }
@@ -37,15 +37,15 @@ export default function BankList() {
     }
 
     const bankList = banks.map(bank => {
-        return <tr key={bank.accountNumber}>
+        return <tr key={bank.id}>
             <td style={{ whiteSpace: 'nowrap' }}>{bank.accountNumber}</td>
             <td>{bank.name}</td>
             <td>{bank.transactionFee}</td>
             <td>{bank.trust}</td>
             <td>
                 <ButtonGroup>
-                    <Button size="sm" color="primary" tag={Link} to={"/banks/" + bank.accountNumber}>Edit</Button>
-                    <Button size="sm" color="danger" onClick={() => remove(bank.accountNumber)}>Delete</Button>
+                    <Button size="sm" color="primary" tag={Link} to={"/banks/" + bank.id}>Edit</Button>
+                    <Button size="sm" color="danger" onClick={() => remove(bank.id)}>Delete</Button>
                 </ButtonGroup>
             </td>
         </tr>
