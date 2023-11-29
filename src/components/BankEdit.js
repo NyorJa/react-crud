@@ -39,18 +39,24 @@ export default function BankEdit() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const method = id !== 'new' ? 'PUT' : 'POST';
-        const url = `/api/banks/${id !== 'new' ? id : ''}`;
-        await fetch(url, {
-            method: method,
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(bank)
-        });
-        setBank(initialFormState);
-        navigate('/banks');
+        if(bank.accountNumber === "") {
+            alert("Account Number must have values");
+        } else if (bank.name === "") {
+            alert("Name must have values");
+        } else {
+            const method = id !== 'new' ? 'PUT' : 'POST';
+            const url = `/api/banks/${id !== 'new' ? id : ''}`;
+            await fetch(url, {
+                method: method,
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bank)
+            });
+            setBank(initialFormState);
+            navigate('/banks');
+        }
     }
 
     const title = <h2>{bank.accountNumber ? 'Edit Bank' : 'Add Bank'}</h2>;
